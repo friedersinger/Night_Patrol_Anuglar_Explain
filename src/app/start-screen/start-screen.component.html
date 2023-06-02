@@ -1,0 +1,163 @@
+<main>
+  <h1>Night Patrol Game</h1>
+
+  <p>
+    Night Patrol is an HTML-based game designed to run in a web browser. It
+    features an immersive gameplay experience where players control a character
+    navigating through different levels, avoiding enemies, collecting coins, and
+    defeating bosses.
+  </p>
+
+  <h2>Demo</h2>
+
+  <p>
+    You can play the game by visiting
+    <a href="https://night-patrol.netlify.app" target="_blank">night-patrol</a>.
+    Give it a try and see how far you can go!
+  </p>
+
+  <h2>Game Components</h2>
+
+  <h3>HTML Structure</h3>
+  <p>
+    The HTML structure defines the layout and elements of the game, including
+    the canvas, buttons, images, and audio elements.
+  </p>
+
+  <h3>JavaScript Classes</h3>
+  <button id="openAllButton" class="modern-button">Open All</button>
+  <ul>
+    <li>
+      <strong>World:</strong>
+      <p class="description">
+        Represents the game world and contains instances of other classes and
+        game objects. It handles game logic, collision detection, sound effects,
+        and rendering.
+      </p>
+    </li>
+    <li>
+      <strong>Character:</strong>
+      <p class="description">
+        Represents the player character in the game. It has properties and
+        methods related to the character's position, movement, energy, and
+        interactions with other game objects.
+      </p>
+    </li>
+    <li>
+      <strong>Endboss:</strong>
+      <p class="description">
+        Represents the end boss character in the game. It has properties and
+        methods related to the boss's position, energy, and interactions with
+        other game objects.
+      </p>
+    </li>
+    <li>
+      <strong>DrawableObject:</strong>
+      <p class="description">
+        Base class for objects that can be drawn on the canvas. It provides
+        basic properties and methods for positioning and rendering objects.
+      </p>
+    </li>
+    <li>
+      <strong>MovableObject:</strong>
+      <p class="description">
+        Extends the DrawableObject class and adds properties and methods for
+        objects that can move, such as enemies, clouds, and background objects.
+      </p>
+    </li>
+    <li>
+      <strong>Gangster:</strong>
+      <p class="description">
+        Represents enemy characters in the game. It extends the MovableObject
+        class and adds methods for enemy-specific behavior.
+      </p>
+    </li>
+    <li>
+      <strong>Cloud:</strong>
+      <p class="description">
+        Represents cloud objects in the game. It extends the MovableObject class
+        and adds methods for cloud-specific behavior.
+      </p>
+    </li>
+    <li>
+      <strong>StatusBar:</strong>
+      <p class="description">
+        Represents a status bar in the game, displaying the character's energy
+        level. It provides methods for updating and rendering the status bar.
+      </p>
+    </li>
+    <li>
+      <strong>Fullscreen:</strong>
+      <p class="description">Handles fullscreen functionality in the game.</p>
+    </li>
+    <li>
+      <strong>BackgroundObject:</strong>
+      <p class="description">
+        Represents background objects in the game, such as scenery and
+        decorations. It extends the DrawableObject class.
+      </p>
+    </li>
+    <li>
+      <strong>Keyboard:</strong>
+      <p class="description">Handles keyboard input and tracks key states.</p>
+    </li>
+    <li>
+      <strong>Level:</strong>
+      <p class="description">
+        Represents a game level and contains information about the level's
+        objects, enemies, and coins.
+      </p>
+    </li>
+    <li>
+      <strong>Coins:</strong>
+      <p class="description">
+        Represents coin objects in the game. It extends the DrawableObject class
+        and provides methods for coin-specific behavior.
+      </p>
+    </li>
+    <li>
+      <strong>WaterBomb:</strong>
+      <p class="description">
+        Represents water bomb objects in the game. It extends the DrawableObject
+        class and provides methods for water bomb-specific behavior.
+      </p>
+    </li>
+    <li>
+      <strong>SmallCoin:</strong>
+      <p class="description">
+        Represents small coin objects in the game. It extends the DrawableObject
+        class and provides methods for small coin-specific behavior.
+      </p>
+    </li>
+    <li>
+      <strong>SmallWaterBomb:</strong>
+      <p class="description">
+        Represents small water bomb objects in the game. It extends the
+        DrawableObject class and provides methods for small water bomb-specific
+        behavior.
+      </p>
+    </li>
+    <li>
+      <strong>ThrowableObject:</strong>
+      <p class="description">
+        Represents objects that can be thrown by the character, such as water
+        bombs. It extends the DrawableObject class and provides methods for
+        throwable object-specific behavior.
+      </p>
+    </li>
+  </ul>
+
+  <h2>Usage</h2>
+  <p>
+    To run the Night Patrol game, simply open the provided HTML file in a web
+    browser that supports JavaScript. The game will load, and you can start
+    playing by following the on-screen instructions and using the keyboard
+    controls.
+  </p>
+
+  <h2>License</h2>
+  <p>
+    This game is released under the
+    <a href="https://opensource.org/license/mit/">MIT License</a>.
+  </p>
+</main>
