@@ -26,149 +26,332 @@
 
   <h3>JavaScript Classes</h3>
 
-  <mat-slide-toggle
+  <!-- <mat-slide-toggle
     id="openAllButton"
     class="example-margin"
     [color]="color"
     [checked]="checked"
     [disabled]="disabled"
+    (change)="openAllPanels()"
   >
     {{ toggleText }}
-  </mat-slide-toggle>
+  </mat-slide-toggle> -->
 
-  <!-- <button id="openAllButton" class="modern-button">Open All</button> -->
-  <ul>
-    <li>
-      <strong>World:</strong>
-      <p class="description">
-        Represents the game world and contains instances of other classes and
-        game objects. It handles game logic, collision detection, sound effects,
-        and rendering.
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>JavaScript Classes</mat-panel-title>
+        <mat-panel-description>
+          Here are 17 classes that represent the game
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>
+        The game features various classes, such as Character, Gangster, and
+        Endboss, each representing different types of characters in the game
+        world. DrawableObject and MovableObject classes handle the visual
+        rendering and movement of objects, including Clouds and
+        BackgroundObjects. Other elements like StatusBar, Level, and Keyboard
+        contribute to the game's interface, progression, and player control.
+        Additionally, collectible objects like Coins and throwable items such as
+        WaterBombs add interactive elements to the gameplay experience.
       </p>
-    </li>
-    <li>
-      <strong>Character:</strong>
-      <p class="description">
-        Represents the player character in the game. It has properties and
-        methods related to the character's position, movement, energy, and
-        interactions with other game objects.
-      </p>
-    </li>
-    <li>
-      <strong>Endboss:</strong>
-      <p class="description">
-        Represents the end boss character in the game. It has properties and
-        methods related to the boss's position, energy, and interactions with
-        other game objects.
-      </p>
-    </li>
-    <li>
-      <strong>DrawableObject:</strong>
-      <p class="description">
-        Base class for objects that can be drawn on the canvas. It provides
-        basic properties and methods for positioning and rendering objects.
-      </p>
-    </li>
-    <li>
-      <strong>MovableObject:</strong>
-      <p class="description">
-        Extends the DrawableObject class and adds properties and methods for
-        objects that can move, such as enemies, clouds, and background objects.
-      </p>
-    </li>
-    <li>
-      <strong>Gangster:</strong>
-      <p class="description">
-        Represents enemy characters in the game. It extends the MovableObject
-        class and adds methods for enemy-specific behavior.
-      </p>
-    </li>
-    <li>
-      <strong>Cloud:</strong>
-      <p class="description">
-        Represents cloud objects in the game. It extends the MovableObject class
-        and adds methods for cloud-specific behavior.
-      </p>
-    </li>
-    <li>
-      <strong>StatusBar:</strong>
-      <p class="description">
-        Represents a status bar in the game, displaying the character's energy
-        level. It provides methods for updating and rendering the status bar.
-      </p>
-    </li>
-    <li>
-      <strong>Fullscreen:</strong>
-      <p class="description">Handles fullscreen functionality in the game.</p>
-    </li>
-    <li>
-      <strong>BackgroundObject:</strong>
-      <p class="description">
-        Represents background objects in the game, such as scenery and
-        decorations. It extends the DrawableObject class.
-      </p>
-    </li>
-    <li>
-      <strong>Keyboard:</strong>
-      <p class="description">Handles keyboard input and tracks key states.</p>
-    </li>
-    <li>
-      <strong>Level:</strong>
-      <p class="description">
-        Represents a game level and contains information about the level's
-        objects, enemies, and coins.
-      </p>
-    </li>
-    <li>
-      <strong>Coins:</strong>
-      <p class="description">
-        Represents coin objects in the game. It extends the DrawableObject class
-        and provides methods for coin-specific behavior.
-      </p>
-    </li>
-    <li>
-      <strong>WaterBomb:</strong>
-      <p class="description">
-        Represents water bomb objects in the game. It extends the DrawableObject
-        class and provides methods for water bomb-specific behavior.
-      </p>
-    </li>
-    <li>
-      <strong>SmallCoin:</strong>
-      <p class="description">
-        Represents small coin objects in the game. It extends the DrawableObject
-        class and provides methods for small coin-specific behavior.
-      </p>
-    </li>
-    <li>
-      <strong>SmallWaterBomb:</strong>
-      <p class="description">
-        Represents small water bomb objects in the game. It extends the
-        DrawableObject class and provides methods for small water bomb-specific
-        behavior.
-      </p>
-    </li>
-    <li>
-      <strong>ThrowableObject:</strong>
-      <p class="description">
-        Represents objects that can be thrown by the character, such as water
-        bombs. It extends the DrawableObject class and provides methods for
-        throwable object-specific behavior.
-      </p>
-    </li>
-  </ul>
+    </mat-expansion-panel>
 
-  <h2>Usage</h2>
-  <p>
-    To run the Night Patrol game, simply open the provided HTML file in a web
-    browser that supports JavaScript. The game will load, and you can start
-    playing by following the on-screen instructions and using the keyboard
-    controls.
-  </p>
+    <mat-accordion>
+      <mat-expansion-panel
+        (opened)="worldOpenState = true"
+        (closed)="worldOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>World</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ worldOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents the game world and contains instances of other classes and
+          game objects. It handles game logic, collision detection, sound
+          effects, and rendering.
+        </p>
+      </mat-expansion-panel>
 
-  <h2>License</h2>
-  <p>
-    This game is released under the
-    <a href="https://opensource.org/license/mit/">MIT License</a>.
-  </p>
+      <mat-expansion-panel
+        (opened)="characterOpenState = true"
+        (closed)="characterOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Character</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ characterOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents the player character in the game. It has properties and
+          methods related to the character's position, movement, energy, and
+          interactions with other game objects.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="endbossOpenState = true"
+        (closed)="endbossOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Endboss</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ endbossOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents the end boss character in the game. It has properties and
+          methods related to the boss's position, energy, and interactions with
+          other game objects.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="drawableObjectOpenState = true"
+        (closed)="drawableObjectOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>DrawableObject</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ drawableObjectOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Base class for objects that can be drawn on the canvas. It provides
+          basic properties and methods for positioning and rendering objects.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="movableObjectOpenState = true"
+        (closed)="movableObjectOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>MovableObject</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ movableObjectOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Extends the DrawableObject class and adds properties and methods for
+          objects that can move, such as enemies, clouds, and background
+          objects.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="throwableOpenState = true"
+        (closed)="throwableOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>ThrowableObject</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ throwableOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents objects that can be thrown by the character, such as water
+          bombs. It extends the DrawableObject class and provides methods for
+          throwable object-specific behavior.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="gangsterOpenState = true"
+        (closed)="gangsterOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Gangster</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ gangsterOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents non-playable characters (NPCs) in the game that belong to a
+          gang or group. Represents enemy characters in the game. It extends the
+          MovableObject class and adds methods for enemy-specific behavior.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="cloudOpenState = true"
+        (closed)="cloudOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Cloud</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ cloudOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents cloud objects in the game. It extends the MovableObject
+          class and adds methods for cloud-specific behavior.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="statusBarOpenState = true"
+        (closed)="statusBarOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>StatusBar</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ statusBarOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents a status bar in the game, displaying the character's energy
+          level. It provides methods for updating and rendering the status bar.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="fullscreenOpenState = true"
+        (closed)="fullscreenOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Fullscreen</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ fullscreenOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Handles fullscreen functionality in the game.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="backgroundObjectOpenState = true"
+        (closed)="backgroundObjectOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>BackgroundObject</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ backgroundObjectOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents background elements in the game, such as scenery,
+          buildings, or environmental objects. They are not interactive but
+          contribute to the game's aesthetics and atmosphere.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="keyboardOpenState = true"
+        (closed)="keyboardOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Keyboard</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ keyboardOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Handles the player's input from the keyboard, allowing them to control
+          the game character or perform certain actions using key presses or
+          combinations.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="levelOpenState = true"
+        (closed)="levelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Level</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ levelOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents a specific stage or level in the game. It defines the
+          layout, challenges, enemies, and objectives that the player will
+          encounter and complete.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="coinsOpenState = true"
+        (closed)="coinsOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Coins</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ coinsOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents coin objects in the game. It extends the DrawableObject
+          class and provides methods for coin-specific behavior.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="waterBombOpenState = true"
+        (closed)="waterBombOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>WaterBomb</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ waterBombOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          The Waterbomb class encapsulates the visual representation and initial
+          position of a waterbomb object. It inherits functionality from the
+          DrawableObject class, allowing it to be rendered and interacted with
+          in the game or application.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="smallCoinOpenState = true"
+        (closed)="smallCoinOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>SmallCoin</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ smallCoinOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          Represents small coin objects in the game. It extends the
+          DrawableObject class and provides methods for small coin-specific
+          behavior.
+        </p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        (opened)="smallWaterBombOpenState = true"
+        (closed)="smallWaterBombOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>SmallWaterBomb</mat-panel-title>
+          <mat-panel-description>
+            Currently I am {{ smallWaterBombOpenState ? "open" : "closed" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+          A throwable version of the water bomb object, which has a reduced
+          impact or limited range compared to the regular water bomb.
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <h2>Usage</h2>
+    <p>
+      To run the Night Patrol game, simply open the provided HTML file in a web
+      browser that supports JavaScript. The game will load, and you can start
+      playing by following the on-screen instructions and using the keyboard
+      controls.
+    </p>
+
+    <h2>License</h2>
+    <p>
+      This game is released under the
+      <a href="https://opensource.org/license/mit/">MIT License</a>.
+    </p>
+  </mat-accordion>
 </main>

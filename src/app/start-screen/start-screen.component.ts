@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-start-screen',
@@ -12,48 +13,45 @@ export class StartScreenComponent implements OnInit {
   checked = false;
   disabled = false;
   toggleText = 'Slide me, to open!';
+  worldOpenState = false;
+  characterOpenState = false;
+  endbossOpenState = false;
+  drawableObjectOpenState = false;
+  movableObjectOpenState = false;
+  throwableOpenState = false;
+  gangsterOpenState = false;
+  cloudOpenState = false;
+  statusBarOpenState = false;
+  fullscreenOpenState = false;
+  backgroundObjectOpenState = false;
+  keyboardOpenState = false;
+  levelOpenState = false;
+  coinsOpenState = false;
+  waterBombOpenState = false;
+  smallCoinOpenState = false;
+  smallWaterBombOpenState = false;
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.handleStrongElements();
-    this.setupOpenAllButton();
-  }
+  ngOnInit(): void {}
 
-  private handleStrongElements(): void {
-    const strongElements: NodeListOf<HTMLElement> =
-      document.querySelectorAll('strong');
-    strongElements.forEach((strongElement: HTMLElement) => {
-      const paragraph: HTMLElement | any = strongElement.nextElementSibling;
-      strongElement.addEventListener('click', () => {
-        if (paragraph) {
-          paragraph.style.display =
-            window.getComputedStyle(paragraph).display === 'none'
-              ? 'block'
-              : 'none';
-        }
-      });
-    });
-  }
-
-  private setupOpenAllButton(): void {
-    const openAllButton: HTMLElement | null =
-      document.getElementById('openAllButton');
-    if (openAllButton) {
-      openAllButton.addEventListener('click', () => {
-        const paragraphs: NodeListOf<HTMLElement> =
-          document.querySelectorAll('.description');
-        const isOpen: boolean =
-          window.getComputedStyle(paragraphs[0]).display === 'none';
-
-        paragraphs.forEach((paragraph: HTMLElement) => {
-          paragraph.style.display = isOpen ? 'block' : 'none';
-        });
-
-        this.toggleText = isOpen
-          ? 'Slide me, to close all!'
-          : 'Slide me, to open all!';
-      });
-    }
-  }
+  // openAllPanels() {
+  //   this.worldOpenState = true;
+  //   this.characterOpenState = true;
+  //   this.endbossOpenState = true;
+  //   this.drawableObjectOpenState = true;
+  //   this.movableObjectOpenState = true;
+  //   this.throwableOpenState = true;
+  //   this.gangsterOpenState = true;
+  //   this.cloudOpenState = true;
+  //   this.statusBarOpenState = true;
+  //   this.fullscreenOpenState = true;
+  //   this.backgroundObjectOpenState = true;
+  //   this.keyboardOpenState = true;
+  //   this.levelOpenState = true;
+  //   this.coinsOpenState = true;
+  //   this.waterBombOpenState = true;
+  //   this.smallCoinOpenState = true;
+  //   this.smallWaterBombOpenState = true;
+  // }
 }

@@ -48,21 +48,6 @@ strong {
   cursor: pointer;
 }
 
-// .modern-button {
-//   background-color: #4caf50;
-//   border: none;
-//   color: white;
-//   margin-bottom: 12px;
-//   padding: 12px 24px;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   font-size: 16px;
-//   border-radius: 4px;
-//   transition-duration: 0.4s;
-//   cursor: pointer;
-// }
-
-// .modern-button:hover {
-//   background-color: #3a873e8b;
-// }
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
