@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StartScreenComponent } from './start-screen/start-screen.component';
 import { UmlComponent } from './uml/uml.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TimeComponent } from './time/time.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     StartScreenComponent,
     UmlComponent,
     NavbarComponent,
+    TimeComponent,
   ],
   imports: [BrowserModule, RouterModule, AppRoutingModule],
   providers: [],

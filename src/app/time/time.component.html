@@ -1,0 +1,66 @@
+<div class="center">
+  <div class="watch" id="watch"></div>
+</div>
+
+<div class="padding">
+  <h1>Erklärung:</h1>
+  <ol>
+    <li>
+      import Component, OnInit from '@angular/core';
+      <ul>
+        <li>
+          Hier werden die benötigten Angular-Module importiert, die für die
+          Component-Klasse und den OnInit-Lifecycle-Hook erforderlich sind.
+        </li>
+      </ul>
+    </li>
+    <li>
+      @Component Decorator
+      <ul>
+        <li>
+          Dieser Decorator definiert die Metadata für die Angular-Komponente.
+          Hier wird der Selektor, das Template und die Styles angegeben.
+        </li>
+      </ul>
+    </li>
+    <li>
+      TimeComponent-Klasse
+      <ul>
+        <li>
+          Hier wird die TimeComponent-Klasse definiert, die die Komponentenlogik
+          enthält. Sie implementiert das OnInit-Interface, um den
+          ngOnInit-Lifecycle-Hook zu verwenden.
+        </li>
+      </ul>
+    </li>
+    <li>
+      ngOnInit-Methode
+      <ul>
+        <li>
+          Dies ist der ngOnInit-Lifecycle-Hook, der aufgerufen wird, sobald die
+          Komponente initialisiert wurde. Hier wird die updateWatch-Methode
+          aufgerufen und ein setInterval-Timer gestartet, um die Uhr regelmäßig
+          zu aktualisieren.
+        </li>
+      </ul>
+    </li>
+    <li>
+      updateWatch-Methode
+      <ul>
+        <li>
+          Dies ist die Methode updateWatch, die die Uhr aktualisiert. Sie ruft
+          das Element mit der ID "watch" aus dem DOM ab und überprüft, ob es
+          existiert. Dann wird das aktuelle Datum und die Uhrzeit abgerufen und
+          in Stunden, Minuten und Sekunden aufgeteilt. Schließlich wird der
+          Textinhalt des Uhr-Elements mit der formatierten Zeit aktualisiert.
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <p>
+    Zusammenfassend ruft die ngOnInit-Methode die updateWatch-Methode auf und
+    startet einen Timer, der diese Methode alle 1000 Millisekunden (1 Sekunde)
+    wiederholt aufruft. Dadurch wird die Uhr regelmäßig aktualisiert und zeigt
+    die aktuelle Zeit an.
+  </p>
+</div>
