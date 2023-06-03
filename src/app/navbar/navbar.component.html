@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img (click)="home()" src="assets/img/header.png" alt="Logo" />
+  </div>
+  <div class="navbar-links" [ngClass]="{ show: showMenu }">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/uml" routerLinkActive="active">UML</a>
+    <a routerLink="/services" routerLinkActive="active">Services</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </div>
+  <div class="navbar-toggle" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>

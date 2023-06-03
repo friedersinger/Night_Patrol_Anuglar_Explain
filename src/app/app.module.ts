@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StartScreenComponent } from './start-screen/start-screen.component';
 import { UmlComponent } from './uml/uml.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { UmlComponent } from './uml/uml.component';
     FooterComponent,
     StartScreenComponent,
     UmlComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, RouterModule, AppRoutingModule],
   providers: [],
