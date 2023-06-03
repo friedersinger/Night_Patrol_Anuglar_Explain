@@ -10,6 +10,11 @@ import { StartScreenComponent } from './start-screen/start-screen.component';
 import { UmlComponent } from './uml/uml.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeComponent } from './time/time.component';
+import { ContactComponent } from './contact/contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -19,8 +24,17 @@ import { TimeComponent } from './time/time.component';
     UmlComponent,
     NavbarComponent,
     TimeComponent,
+    ContactComponent,
   ],
-  imports: [BrowserModule, RouterModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
