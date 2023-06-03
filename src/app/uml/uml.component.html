@@ -1,55 +1,61 @@
-<h1>Night Patrol UML</h1>
-<h3>
-  On the right side, you can observe the Unified Modeling Language (UML) diagram
-  representing the structure of the "Night Patrol" game. This diagram provides a
-  visual representation of the classes and their relationships within the game
-  system.
-</h3>
-<div>
-  <h2>Agenda</h2>
-  <mat-list role="list">
-    <mat-list-item role="listitem"
-      >+ denotes public attributes or operations</mat-list-item
-    >
-    <mat-list-item role="listitem"
-      >- denotes private attributes or operations</mat-list-item
-    >
-    <mat-list-item role="listitem"
-      ># denotes protected attributes or operations</mat-list-item
-    >
-  </mat-list>
+<div class="padding">
+  <h1>Night Patrol UML</h1>
+  <h3>
+    On the right side, you can observe the Unified Modeling Language (UML)
+    diagram representing the structure of the "Night Patrol" game. This diagram
+    provides a visual representation of the classes and their relationships
+    within the game system.
+  </h3>
+  <div>
+    <h2>Agenda</h2>
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        >+ denotes public attributes or operations</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >- denotes private attributes or operations</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        ># denotes protected attributes or operations</mat-list-item
+      >
+    </mat-list>
 
-  <table class="table table-sm table-dark">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Access Specifier</h2>
+    <table class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Members of their OWN CLASS can access</th>
+          <th scope="col">
+            Members of a SUBCLASS of their own class can access
+          </th>
+          <th scope="col">Members of CLIENTS (other classes) can access</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><strong>+</strong><br />public</th>
+          <td class="bg-success">yes</td>
+          <td class="bg-success">yes</td>
+          <td class="bg-success">yes</td>
+        </tr>
+        <tr>
+          <th scope="row"><strong>#</strong><br />protected</th>
+          <td class="bg-success">yes</td>
+          <td class="bg-success">yes</td>
+          <td class="bg-danger">no</td>
+        </tr>
+        <tr>
+          <th scope="row"><strong>-</strong><br />private</th>
+          <td class="bg-success">yes</td>
+          <td class="bg-danger">no</td>
+          <td class="bg-danger">no</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <div class="inner-content">
-    <img src="assets/img/Class_Diagram.drawio.png" alt="" />
+    <div class="inner-content">
+      <img src="assets/img/Class_Diagram.drawio.png" alt="" />
+    </div>
   </div>
 </div>
