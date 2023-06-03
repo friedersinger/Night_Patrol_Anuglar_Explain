@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSelectModule,
     MatSlideToggleModule,
     MatExpansionModule,
+    MatListModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
