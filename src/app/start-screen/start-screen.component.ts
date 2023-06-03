@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-start-screen',
@@ -7,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartScreenComponent implements OnInit {
   title: string = 'Night_Patrol_Angular';
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
+  toggleText = 'Slide me, to open!';
 
   constructor() {}
 
   ngOnInit(): void {
     this.handleStrongElements();
     this.setupOpenAllButton();
-    this.includeHTML();
   }
 
   private handleStrongElements(): void {
@@ -46,32 +50,10 @@ export class StartScreenComponent implements OnInit {
           paragraph.style.display = isOpen ? 'block' : 'none';
         });
 
-        if (isOpen) {
-          openAllButton.innerText = 'Close All';
-          openAllButton.style.backgroundColor = 'red';
-        } else {
-          openAllButton.innerText = 'Open All';
-          openAllButton.style.backgroundColor = '#4CAF50';
-        }
+        this.toggleText = isOpen
+          ? 'Slide me, to close all!'
+          : 'Slide me, to open all!';
       });
-    }
-  }
-
-  private async includeHTML(): Promise<void> {
-    const includeElements: NodeListOf<HTMLElement> =
-      document.querySelectorAll('[w3-include-html]');
-    const elementsArray: HTMLElement[] = Array.from(includeElements);
-
-    for (const element of elementsArray) {
-      const file: string | null = element.getAttribute('w3-include-html'); // "includes/header.html"
-      if (file) {
-        const resp: Response = await fetch(file);
-        if (resp.ok) {
-          element.innerHTML = await resp.text();
-        } else {
-          element.innerHTML = 'Page not found';
-        }
-      }
     }
   }
 }

@@ -25,7 +25,18 @@
   </p>
 
   <h3>JavaScript Classes</h3>
-  <button id="openAllButton" class="modern-button">Open All</button>
+
+  <mat-slide-toggle
+    id="openAllButton"
+    class="example-margin"
+    [color]="color"
+    [checked]="checked"
+    [disabled]="disabled"
+  >
+    {{ toggleText }}
+  </mat-slide-toggle>
+
+  <!-- <button id="openAllButton" class="modern-button">Open All</button> -->
   <ul>
     <li>
       <strong>World:</strong>

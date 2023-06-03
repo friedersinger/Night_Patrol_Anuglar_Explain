@@ -1,15 +1,52 @@
-<mat-form-field>
-  <mat-label>Input</mat-label>
-  <input matInput />
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Select</mat-label>
-  <mat-select>
-    <mat-option value="one">First option</mat-option>
-    <mat-option value="two">Second option</mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Textarea</mat-label>
-  <textarea matInput></textarea>
-</mat-form-field>
+<div data-aos="fade-left" data-aos-duration="1000">
+  <form (submit)="sendMail()" ngNativeValidate class="message-boxes" #myForm>
+    <input
+      class="input-small"
+      required
+      type="text"
+      name="name"
+      placeholder="Your name"
+      #nameField
+      [disabled]="send"
+    />
+
+    <input
+      class="input-small"
+      required
+      type="email"
+      name="email"
+      placeholder="Your email"
+      #emailField
+      [disabled]="send"
+    />
+
+    <textarea
+      class="input-big"
+      required
+      name="message"
+      placeholder="Your message"
+      style="padding: 10px"
+      #messageField
+      [disabled]="send"
+    ></textarea>
+
+    <div style="width: 100%">
+      <p class="sent-or-not" style="color: red" *ngIf="failed">
+        Ups, there was a mistake... please try again
+      </p>
+      <p class="sent-or-not" style="color: greenyellow" *ngIf="sendSuccess">
+        Email sent!
+      </p>
+    </div>
+    <button
+      type="submit"
+      mat-raised-button
+      style="background-color: #00bee8"
+      color="primary"
+      #sendButton
+      [disabled]="send"
+    >
+      <p>Send message :)</p>
+    </button>
+  </form>
+</div>

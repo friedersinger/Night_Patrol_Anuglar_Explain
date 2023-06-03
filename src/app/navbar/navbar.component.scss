@@ -24,6 +24,10 @@
   color: #333;
 }
 
+.navbar-links a:hover {
+  color: #57c8fc;
+}
+
 .navbar-links a.active {
   font-weight: bold;
   color: #00aafb;
@@ -60,6 +64,7 @@
     align-items: flex-end;
     position: absolute;
     background-color: #333;
+    gap: 8px;
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
