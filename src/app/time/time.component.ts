@@ -1,3 +1,4 @@
+// time.component.ts
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./time.component.scss'],
 })
 export class TimeComponent implements OnInit {
+  textInput: any;
   ngOnInit() {
     this.updateWatch();
     setInterval(() => this.updateWatch(), 1000);

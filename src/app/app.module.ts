@@ -10,7 +10,6 @@ import { StartScreenComponent } from './start-screen/start-screen.component';
 import { UmlComponent } from './uml/uml.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeComponent } from './time/time.component';
-import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -19,6 +18,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ExplainComponent } from './explain/explain.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UmlComponent,
     NavbarComponent,
     TimeComponent,
-    ContactComponent,
+    ExplainComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatExpansionModule,
     MatListModule,
     NgbModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

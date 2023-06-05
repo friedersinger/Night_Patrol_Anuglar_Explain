@@ -1,16 +1,15 @@
 <div class="center">
   <div class="watch" id="watch"></div>
 </div>
-
 <div class="padding">
-  <h1>Erklärung:</h1>
+  <h1>Explanation:</h1>
   <ol>
     <li>
       import Component, OnInit from '@angular/core';
       <ul>
         <li>
-          Hier werden die benötigten Angular-Module importiert, die für die
-          Component-Klasse und den OnInit-Lifecycle-Hook erforderlich sind.
+          Here, the necessary Angular modules are imported, which are required
+          for the Component class and the OnInit lifecycle hook.
         </li>
       </ul>
     </li>
@@ -18,49 +17,115 @@
       @Component Decorator
       <ul>
         <li>
-          Dieser Decorator definiert die Metadata für die Angular-Komponente.
-          Hier wird der Selektor, das Template und die Styles angegeben.
+          This decorator defines the metadata for the Angular component. Here,
+          the selector, template, and styles are specified.
         </li>
       </ul>
     </li>
     <li>
-      TimeComponent-Klasse
+      TimeComponent class
       <ul>
         <li>
-          Hier wird die TimeComponent-Klasse definiert, die die Komponentenlogik
-          enthält. Sie implementiert das OnInit-Interface, um den
-          ngOnInit-Lifecycle-Hook zu verwenden.
+          Here, the TimeComponent class is defined, which contains the component
+          logic. It implements the OnInit interface to use the ngOnInit
+          lifecycle hook.
         </li>
       </ul>
     </li>
     <li>
-      ngOnInit-Methode
+      ngOnInit method
       <ul>
         <li>
-          Dies ist der ngOnInit-Lifecycle-Hook, der aufgerufen wird, sobald die
-          Komponente initialisiert wurde. Hier wird die updateWatch-Methode
-          aufgerufen und ein setInterval-Timer gestartet, um die Uhr regelmäßig
-          zu aktualisieren.
+          This is the ngOnInit lifecycle hook, which is called once the
+          component has been initialized. Here, the updateWatch method is called
+          and a setInterval timer is started to update the clock regularly.
         </li>
       </ul>
     </li>
     <li>
-      updateWatch-Methode
+      updateWatch method
       <ul>
         <li>
-          Dies ist die Methode updateWatch, die die Uhr aktualisiert. Sie ruft
-          das Element mit der ID "watch" aus dem DOM ab und überprüft, ob es
-          existiert. Dann wird das aktuelle Datum und die Uhrzeit abgerufen und
-          in Stunden, Minuten und Sekunden aufgeteilt. Schließlich wird der
-          Textinhalt des Uhr-Elements mit der formatierten Zeit aktualisiert.
+          This is the updateWatch method that updates the clock. It retrieves
+          the element with the ID "watch" from the DOM and checks if it exists.
+          Then it retrieves the current date and time and splits it into hours,
+          minutes, and seconds. Finally, it updates the text content of the
+          clock element with the formatted time.
         </li>
       </ul>
     </li>
   </ol>
   <p>
-    Zusammenfassend ruft die ngOnInit-Methode die updateWatch-Methode auf und
-    startet einen Timer, der diese Methode alle 1000 Millisekunden (1 Sekunde)
-    wiederholt aufruft. Dadurch wird die Uhr regelmäßig aktualisiert und zeigt
-    die aktuelle Zeit an.
+    In summary, the ngOnInit method calls the updateWatch method and starts a
+    timer that repeatedly calls this method every 1000 milliseconds (1 second).
+    This ensures that the clock is regularly updated and displays the current
+    time.
+  </p>
+  <h2>Input field with output</h2>
+  <mat-form-field class="example-full-width">
+    <mat-label>Just put something in.</mat-label>
+    <input
+      type="text"
+      [(ngModel)]="textInput"
+      matInput
+      placeholder="Ex. Watch"
+      value=""
+    />
+  </mat-form-field>
+  <span class="output">{{ textInput }}</span>
+
+  <h3>Explanation:</h3>
+  <img src="assets/funcitonEx/function_input.png" alt="Code" />
+  <ul>
+    <li>
+      &lt;mat-form-field&gt;: This element creates a form field container.
+    </li>
+    <li>
+      &lt;mat-label&gt;: This element provides a label for the input field.
+    </li>
+    <li>
+      &lt;input&gt;: This is the actual input field element. It has several
+      attributes and directives:
+      <ul>
+        <li>
+          ngModel="textInput": This is a two-way data binding using the ngModel
+          directive. It binds the value of the input field to the textInput
+          property in the component class.
+        </li>
+        <li>
+          matInput: This is an Angular Material directive that styles the input
+          field to match the Material Design guidelines.
+        </li>
+        <li>
+          placeholder="Ex. Watch": This attribute sets a placeholder text that
+          appears in the input field before the user enters any value.
+        </li>
+        <li>
+          value="": This attribute initializes the value of the input field to
+          an empty string.
+        </li>
+      </ul>
+    </li>
+    <li>
+      &lt;span&gt; textInput&lt;/span&gt;: This &lt;span&gt; element displays
+      the value of the textInput property from the component class.
+    </li>
+  </ul>
+  <p>
+    <code>export class TimeComponent implements OnInit</code>: This line defines
+    the TimeComponent class, which represents the component's logic. It
+    implements the OnInit interface, allowing you to use the ngOnInit lifecycle
+    hook.
+  </p>
+  <p>
+    <code>textInput: any;</code>: This property textInput is declared to store
+    the value entered in the input field. It is initially assigned the value
+    undefined (since any allows any type).
+  </p>
+  <p>
+    Overall, this code creates a form field with an input element and displays
+    the entered value in a &lt;span&gt; element. The textInput property in the
+    component class is used to bind the input field's value and display it in
+    real-time.
   </p>
 </div>
