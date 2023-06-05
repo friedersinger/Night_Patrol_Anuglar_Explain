@@ -61,7 +61,7 @@
     This ensures that the clock is regularly updated and displays the current
     time.
   </p>
-  <h2>Input field with output</h2>
+  <h2>Input field with two-way data binding</h2>
   <mat-form-field class="example-full-width">
     <mat-label>Just put something in.</mat-label>
     <input
@@ -112,13 +112,7 @@
     </li>
   </ul>
   <p>
-    <code>export class TimeComponent implements OnInit</code>: This line defines
-    the TimeComponent class, which represents the component's logic. It
-    implements the OnInit interface, allowing you to use the ngOnInit lifecycle
-    hook.
-  </p>
-  <p>
-    <code>textInput: any;</code>: This property textInput is declared to store
+    <code>textInput: any;</code> This property textInput is declared to store
     the value entered in the input field. It is initially assigned the value
     undefined (since any allows any type).
   </p>
